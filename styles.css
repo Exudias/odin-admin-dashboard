@@ -75,6 +75,9 @@ ul {
     grid-area: 2 / 2 / -1 / -1;
     background-color: blue;
 
+    padding: 36px;
+    gap: 36px;
+
     display: grid;
     grid-template: 1fr 1fr / 3fr 1fr;
 }
@@ -86,16 +89,62 @@ ul {
 
     display: flex;
     flex-direction: column;
+    gap: 48px;
+}
+
+.projects-list {
+    display: grid;
+    height: 100%;
+    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+    gap: 24px;
+
+    padding: 12px;
+}
+
+.project-card {
+    background-color: red;
+    height: 100%;
 }
 
 .announcements-container {
     background-color: yellow;
 
     grid-area: 1 / 2 / span 1 / span 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.announcements-list {
+    background-color: brown;
+    display: grid;
+    height: 100%;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 12px;
+    padding: 24px;
+}
+
+.announcements-card {
+    height: 100%;
 }
 
 .trending-container {
-    background-color: pink;
+    background-color: yellow;
     
     grid-area: 2 / 2 / span 1 / span 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
+
+.trending-list {
+    background-color: brown;
+    display: grid;
+    height: 100%;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 12px;
+    padding: 24px;
+}
+
