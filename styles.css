@@ -6,6 +6,12 @@
 
 :root {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* Colors */
+    --color-highlight: #4c0519;
+    --color-background: #fda4af;
+    --color-foreground: #fecdd3;
+    --color-accent: #be123c;
+    --color-light: #ffe4e6;
 }
 
 body {
@@ -21,15 +27,14 @@ ul {
 
     display: grid;
 
-    background-color: pink;
-
     grid-template-columns: 1fr 5fr;
     grid-template-rows: 1fr 5fr;
 }
 
 .sidebar {
     grid-area: 1 / 1 / -1 / 2;
-    background-color: red;
+    background-color: var(--color-highlight);
+    color: var(--color-light);
 
     padding: 24px;
 
@@ -38,9 +43,44 @@ ul {
     gap: 48px;
 }
 
+.logo-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.logo-row img {
+    filter: invert(100%);
+
+    width: 50px;
+}
+
+.tabs-container li {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+    font-weight: bold;
+}
+
+.tabs-container ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tabs-container img {
+    filter: invert(100%);
+
+    width: 30px;
+}
+
 .header {
     grid-area: 1 / 2 / 2 / -1;
-    background-color: green;
+    background-color: var(--color-foreground);
 
     display: grid;
     grid-template-rows: 1fr 1fr;
@@ -52,6 +92,28 @@ ul {
     display: grid;
     grid-template-columns: 2fr 1fr;
     align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    gap: 12px;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 0px 12px;
+}
+
+.search-bar input {
+    flex: 1;
+
+    border: 0;
+    border-radius: 24px;
+    height: 36px;
+}
+
+.search-bar img {
+    width: 30px;
 }
 
 .header-bottom {
@@ -69,11 +131,22 @@ ul {
 
 .nav-container input {
     flex: 1;
+
+    color: var(--color-light);
+    font-weight: bold;
+    font-size: 18px;
+
+    background-color: var(--color-highlight);
+
+    border: 0px;
+    border-radius: 24px;
+
+    padding: 12px;
 }
 
 .main-content {
     grid-area: 2 / 2 / -1 / -1;
-    background-color: blue;
+    background-color: var(--color-background);
 
     padding: 36px;
     gap: 36px;
@@ -83,13 +156,11 @@ ul {
 }
 
 .projects-container {
-    background-color: antiquewhite;
-
     grid-area: 1 / 1 / -1 / span 1;
 
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: 24px;
 }
 
 .projects-list {
@@ -97,18 +168,14 @@ ul {
     height: 100%;
     grid-template: repeat(3, 1fr) / repeat(2, 1fr);
     gap: 24px;
-
-    padding: 12px;
 }
 
 .project-card {
-    background-color: red;
+    background-color: var(--color-foreground);
     height: 100%;
 }
 
 .announcements-container {
-    background-color: yellow;
-
     grid-area: 1 / 2 / span 1 / span 1;
 
     display: flex;
@@ -117,7 +184,7 @@ ul {
 }
 
 .announcements-list {
-    background-color: brown;
+    background-color: var(--color-foreground);
     display: grid;
     height: 100%;
     grid-template-rows: repeat(3, 1fr);
@@ -130,8 +197,6 @@ ul {
 }
 
 .trending-container {
-    background-color: yellow;
-    
     grid-area: 2 / 2 / span 1 / span 1;
 
     display: flex;
@@ -140,7 +205,7 @@ ul {
 }
 
 .trending-list {
-    background-color: brown;
+    background-color: var(--color-foreground);
     display: grid;
     height: 100%;
     grid-template-rows: repeat(4, 1fr);
